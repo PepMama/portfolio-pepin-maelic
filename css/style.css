@@ -1,0 +1,302 @@
+@font-face {
+    font-family: 'Montserrat Bold';
+    font-weight: 700;
+    src: url('fonts/Montserrat/static/Montserrat-Bold.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Montserrat Light';
+    font-weight: 300;
+    src: url('fonts/Montserrat/static/Montserrat-Light.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Montserrat Medium';
+    font-weight: 500;
+    src: url('fonts/Montserrat/static/Montserrat-Medium.ttf') format('truetype');
+}
+
+
+
+/* =========== Variables =========== */
+:root{
+    /* var des couleurs */
+    --background-color: #fffffe;
+    --title-color: #001858;
+    --paragraphe-color: #172c66;
+    --main-color: #6246ea;
+    --secondary-color: #d1d1e9;
+    --tertiary-color: #e45858;
+    --button-color: #6246ea;
+    --button-text-color: #fffffe;
+
+    /* font-size */
+    --h1-size: 4rem ;
+    --h2-size: 2.5rem;
+    --h3-size: 2rem;
+    --h4-size: 1.75rem;
+    --paragraphe-size: 1.2rem; /* 16px */
+    --span-size: .875rem; /* 14px */
+
+    /* Fonts */
+    --font-light: 'Montserrat Light';
+    --font-semi-light: 'Montserrat Medium';
+    --font-bold: 'Montserrat Bold';
+
+}
+
+/* =========== CSS Principal =========== */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    overflow-x: hidden;
+    font-family: var(--font-light);
+}
+
+h1{
+    font-size: var(--h1-size);
+    font-family: var(--font-bold);
+}
+
+h2{
+    font-size: var(--h2-size);
+    font-family:  ;
+}
+
+h3{
+    font-size: var(--h3-size);
+}
+
+h4{
+    font-size: var(--h4-size);
+}
+
+p{
+    font-size: var(--paragraphe-size);
+}
+
+span{
+    font-size: var(--span-size);
+}
+
+a{
+    text-decoration: none;
+}
+
+ul{ 
+    list-style: none; 
+}
+
+img{
+    width: 100%;
+    object-fit: cover;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 20px auto;
+    width: 80%;
+}
+
+.container > h2 {
+    font-size: var(--h2-size);
+    text-transform: uppercase;
+    color: var(--main-color);
+}
+
+/* Faire l'apparition progressive  */
+.reveal{
+    opacity: 0;
+    transform: translate(-100px);
+}
+
+.reveal-visible{
+    opacity: 1;
+    transform: translate(0);
+    transition: 2s cubic-bezier(0.5, 0, 0, 1);
+}
+
+/* =========== Section Header =========== */
+.header--wrap{
+    position:fixed;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+    padding: 0 150px;
+    width: 100%;
+    z-index: 5;
+    background-color: #ffff;
+}
+
+.header--logo{
+    width: 150px;
+}
+
+.menu{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.menu--links > a {
+    position: relative;
+    text-transform: uppercase;
+    margin: 0 10px;
+    color: var(--main-color);
+    font-weight: 600;
+}
+
+.menu--links > a:before,
+.menu--links > a:after {
+    content: "";
+    position: absolute;
+    bottom: -4px;
+    width: 0;
+    height: 2px;
+    background-color: var(--main-color);
+    transition: width 0.3s ease-in-out;
+}
+  
+.menu--links > a:before {
+    left: 50%;
+    transform: translateX(-50%);
+}
+  
+.menu--links > a:after {
+    right: 50%;
+    transform: translateX(50%);
+}
+  
+.menu--links > a:hover:before,
+.menu--links > a:hover:after {
+    width: 100%;
+}
+
+
+/* =========== Main Section =========== */
+.main--section{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+}
+
+.main--section > h1{
+    margin-top: -150px;
+    margin-bottom: 60px;
+    font-size: var(--h1-size);
+    color: var(--main-color);
+}
+
+.main--section > h2{
+    font-size: var(--h2-size);
+    color: var(--main-color);
+}
+
+/* =========== Profil Section =========== */
+.container--profil{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 0 auto;
+    height: 50vh;
+}
+
+.profil--img{
+    width: 25%;
+}
+
+.profil--desc{
+    width: 40%;
+    text-align: justify;
+}
+
+.profil--desc > p{
+    font-size: var(--paragraphe-size);
+    color: var(--paragraphe-color);
+    line-height: 1.5;
+}
+
+/* =========== A propos Section =========== */
+
+/*===== Code timeline ===== */
+.box_timeline{
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    margin-bottom: 80px;
+    margin-top: 80px;
+}
+
+.ligne{
+    height: 620px;
+    width: 3px;
+    margin: 0 auto;
+    background-color: var(--button-color);
+}
+
+.rond{
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: var(--button-color);
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%)
+}
+
+/* Placer les ronds sur la ligne */
+.r1{top: 0px;}
+.r2{top: 280px;}
+.r3{top: 600px;}
+
+.box{
+    width: 400px;
+    min-height: 200px;
+    padding: 20px;
+    border-radius: 10px;
+    height: auto;
+    background-color: var(--secondary-color);
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+}
+
+.b1{
+    top: 0px;
+    left: calc(50% - 270px);
+}
+
+.b2{
+    top: 280px;
+    left: calc(50% + 270px); /* + et - permettent d'alterner droite gauche */
+}
+
+.b3{
+    top: 600px;
+    left: calc(50% - 270px);
+}
+
+.box .text{
+    font-size: 1rem;
+    margin-top: 15px;
+    line-height: 20px;
+}
+
+.title_timeline{
+    font-size: 1.5rem;
+    color: var(--button-color);
+}
+
+
+/*===== Fin Code timeline ===== */
