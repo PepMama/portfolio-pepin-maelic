@@ -10,8 +10,6 @@ for (let lien of liensMenu) {
   });
 }
 
-
-// Code pour animer le header 
 // On commence par créer un nouveau IntersectionObserver
 const ratio = 0.1
 const options = {
@@ -28,7 +26,6 @@ const handleIntersect = function (entries, observer) {
         }
     })
 }
-
 
 const observer = new IntersectionObserver(handleIntersect, options)
 document.querySelectorAll('.reveal').forEach(function (r) {

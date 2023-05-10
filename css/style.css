@@ -1,22 +1,20 @@
 @font-face {
     font-family: 'Montserrat Bold';
     font-weight: 700;
-    src: url('fonts/Montserrat/static/Montserrat-Bold.ttf') format('truetype');
+    src: url('/fonts/Montserrat/static/Montserrat-Bold.ttf') format('truetype');
 }
 
 @font-face {
     font-family: 'Montserrat Light';
     font-weight: 300;
-    src: url('fonts/Montserrat/static/Montserrat-Light.ttf') format('truetype');
+    src: url('/fonts/Montserrat/static/Montserrat-Light.ttf') format('truetype');
 }
 
 @font-face {
     font-family: 'Montserrat Medium';
     font-weight: 500;
-    src: url('fonts/Montserrat/static/Montserrat-Medium.ttf') format('truetype');
+    src: url('/fonts/Montserrat/static/Montserrat-Medium.ttf') format('truetype');
 }
-
-
 
 /* =========== Variables =========== */
 :root{
@@ -54,15 +52,16 @@
 
 body{
     overflow-x: hidden;
-    font-family: var(--font-light);
 }
 
 h1{
     font-size: var(--h1-size);
+    font-family: var(--font-bold);
 }
 
 h2{
     font-size: var(--h2-size);
+    font-family: var(--font-semi-light);
 }
 
 h3{
@@ -75,6 +74,7 @@ h4{
 
 p{
     font-size: var(--paragraphe-size);
+    font-family: var(--font-light);
 }
 
 span{
@@ -137,6 +137,7 @@ img{
     width: 100%;
     z-index: 5;
     background-color: #ffff;
+    opacity: 1;
 }
 
 .header--logo{
