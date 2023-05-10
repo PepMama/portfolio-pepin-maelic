@@ -10,3 +10,32 @@ for (let lien of liensMenu) {
   });
 }
 
+
+// Code pour animer le header 
+// On commence par créer un nouveau IntersectionObserver
+const ratio = 0.1
+const options = {
+    root: null, // élément racine, permet de détecter si l'element sera visible ou non
+    rootMargin: '0px', 
+    threshold: ratio // dès que 10% de l'élément est visible, on va déclencher les animations
+}
+
+const handleIntersect = function (entries, observer) {
+    entries.forEach(function (entry) {
+        if (entry.intersectionRatio > ratio) {
+            entry.target.classList.add('reveal-visible')
+            observer.unobserve(entry.target)
+        }
+    })
+}
+
+
+const observer = new IntersectionObserver(handleIntersect, options)
+document.querySelectorAll('.reveal').forEach(function (r) {
+  observer.observe(r)
+})
+
+document.querySelectorAll('.reveal-reverse').forEach(function (r) {
+  observer.observe(r)
+})
+

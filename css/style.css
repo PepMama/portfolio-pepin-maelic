@@ -59,12 +59,10 @@ body{
 
 h1{
     font-size: var(--h1-size);
-    font-family: var(--font-bold);
 }
 
 h2{
     font-size: var(--h2-size);
-    font-family:  ;
 }
 
 h3{
@@ -115,6 +113,11 @@ img{
 .reveal{
     opacity: 0;
     transform: translate(-100px);
+}
+
+.reveal-reverse{
+    opacity: 0;
+    transform: translate(100px);
 }
 
 .reveal-visible{
