@@ -36,3 +36,28 @@ document.querySelectorAll('.reveal-reverse').forEach(function (r) {
   observer.observe(r)
 })
 
+// Animer la progresse barre pour les compétences 
+const progresseBarElements = document.querySelectorAll('.progress-bar');
+const option = {
+  rootMargin: "0px",
+  threshold: 0.5
+};
+
+const observerProgressBar = new IntersectionObserver((entries, observerProgressBar) => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting){
+      const progressBar = entry.target;
+      const progress = progressBar.getAttribute('data-progress');
+      progressBar.style.width = `${progress}%`;
+      progressBar.style.transition = 'width 1s ease-in-out';
+      observerProgressBar.unobserve(progressBar);
+    }
+  });
+}, option);
+
+progresseBarElements.forEach(progressBar => {
+  observerProgressBar.observe(progressBar);
+}); 
+
+
+
